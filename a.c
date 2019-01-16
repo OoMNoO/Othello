@@ -21,11 +21,13 @@ int main(int argc,char* argv[])
         for(j=0;j<8;j++)
             board[i][j]=(*(string + j));
     }
+    /*
     for(i=1;i<argc;i++){
         for(j=0;j<8;j++)
             printf("%c ",board[i][j]);
         printf("\n");
     }
+    */
     Rowchecker(board);
     return 0;
 }
