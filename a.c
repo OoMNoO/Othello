@@ -1,69 +1,77 @@
 #include <stdio.h>
 
-void Rowchecker(char *string);
-void check(char *string);
-void upcheck(string);
-void downcheck(string);
-void leftcheck(string);
-void rightcheck(string);
-void rightupcheck(string);
-void rightdowncheck(string);
-void leftupcheck(string);
-void leftdowncheck(string);
+void Rowchecker(char board[8][8]);
+int check(int i,int j);
+int upcheck(int i,int j);
+int downcheck(int i,int j);
+int leftcheck(int i,int j);
+int rightcheck(int i,int j);
+int rightupcheck(int i,int j);
+int rightdowncheck(int i,int j);
+int leftupcheck(int i,int j);
+int leftdowncheck(int i,int j);
+
 
 int main(int argc,char* argv[])
 {
-    int counter;
-    printf("Program Name Is: %s",argv[0]);
-    if(argc==1)
-    printf("\nNo Extra Command Line Argument Passed Other Than Program Name");
-    if(argc>=2){
-        for(counter=0;counter<argc;counter++){
-            Rowchecker(argv[counter]);
-        }
+    int i,j;
+    char board[8][8];
+    for(i=1;i<argc;i++){
+        char *string=argv[i];
+        for(j=0;j<8;j++)
+            board[i][j]=(*(string + j));
     }
+    for(i=1;i<argc;i++){
+        for(j=0;j<8;j++)
+            printf("%c ",board[i][j]);
+        printf("\n");
+    }
+    Rowchecker(board);
     return 0;
 }
 
-void upcheck(string){
+int upcheck(int i,int j){
 
 }
-void downcheck(string){
+int downcheck(int i,int j){
     
 }
-void leftcheck(string){
+int leftcheck(int i,int j){
     
 }
-void rightcheck(string){
+int rightcheck(int i,int j){
     
 }
-void rightupcheck(string){
+int rightupcheck(int i,int j){
     
 }
-void rightdowncheck(string){
+int rightdowncheck(int i,int j){
     
 }
-void leftupcheck(string){
+int leftupcheck(int i,int j){
     
 }
-void leftdowncheck(string){
+int leftdowncheck(int i,int j){
     
 }
 
-void check(char *string){
-    upcheck(string);
-    downcheck(string);
-    leftcheck(string);
-    rightcheck(string);
-    rightupcheck(string);
-    rightdowncheck(string);
-    leftupcheck(string);
-    leftdowncheck(string);
+int check(int i,int j){
+    upcheck(i,j);
+    downcheck(i,j);
+    leftcheck(i,j);
+    rightcheck(i,j);
+    rightupcheck(i,j);
+    rightdowncheck(i,j);
+    leftupcheck(i,j);
+    leftdowncheck(i,j);
 }
-void Rowchecker(char *string){
-    for(int i=0;i<8;i++){
-        if (*(string + i) == '0'){
-            check((string + i));
+void Rowchecker(char board[8][8]){
+    int i,j;
+    for(int i=1;i<8;i++){
+        for(j=0;j<8;j++){
+            if (board[i][j]=='0'){
+                check(i,j);
+            }
         }
     }
 }
