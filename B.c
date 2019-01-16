@@ -20,12 +20,13 @@ int main(int argc,char* argv[])
 	for(i=0;i<8;i++)
 		for(j=0;j<8;j++)
 			board[i][j]=argv[1+i][j];
-    
+    /*
     for(i=1;i<8;i++){
         for(j=0;j<8;j++)
             printf("%c ",board[i][j]);
         printf("\n");
     }
+	*/
     player=argv[9][0];
     Rowchecker(board);
 	return 0;
