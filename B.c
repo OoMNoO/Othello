@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 void Rowchecker(char board[8][8]);
 int check(int i,int j);
 int upcheck(int i,int j);
@@ -69,7 +68,7 @@ int check(int i,int j){
 }
 void Rowchecker(char board[8][8]){
     int i,j;
-    for(int i=1;i<8;i++){
+    for(i=1;i<8;i++){
         for(j=0;j<8;j++){
             if (board[i][j]=='0'){
                 check(i,j);
