@@ -38,7 +38,7 @@ int main(int argc,char* argv[])
         printf("\n");
     }*/
     choice(scorepoint,a);
-    printf("%d %d",a[0],a[1]);
+    printf("%d %d",a[1],a[0]);
     return 0;
 }
 
@@ -263,7 +263,7 @@ void choice(int scorepoint[8][8],int a[]){
 	int i,j,max=0;
     for(i=0;i<8;i++)
         for(j=0;j<8;j++)
-        	if(scorepoint[i][j]>max){
+        	if(scorepoint[i][j]>=max){
         		max=scorepoint[i][j];
         		a[0]=i;
 				a[1]=j;
